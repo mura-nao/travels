@@ -1,0 +1,13 @@
+<!-- TravelController#show -->
+<!-- @travelで、トラベルモデルインスタンス取得 -->
+<h1><%= @travel.content %></h1>
+
+<ul>
+<% @travel.comments.each do |comment| %>
+    <li><%= comment.content %></li>
+<% end %>
+</ul>
+
+<%= link_to '新規コメント作成', new_comment_path(id: @travel.id) %>
+<!-- CommentController#newに行く  params[:id]で、newアクション側で@travel.id取得 -->
+<!-- @comment = Comment.new(travel_id: params[:id]) -->

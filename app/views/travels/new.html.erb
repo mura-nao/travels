@@ -1,0 +1,15 @@
+<h1><%= @prefecture.name %></h1>
+<h2>観光名物の新規作成ページ</h2>
+<div class="row">
+  <aside class="col-sm-4">
+    <%= form_with(model: @travel, local: true) do |f| %>
+      <%= f.hidden_field :prefecture_id, value: @prefecture.id %>
+      <%= render 'layouts/error_messages', model: f.object %>
+    
+      <div class="form-group">
+        <%= f.text_area :resource, class: 'form-control', rows: 5 %>
+      </div>
+        <%= f.submit '作成', class: 'btn btn-primary btn-block' %>
+    <% end %>
+  </aside>
+</div>

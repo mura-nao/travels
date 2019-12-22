@@ -1,0 +1,11 @@
+<h1><%= @prefecture.name %>の観光名物</h1>
+
+<ul>
+    <% @prefecture.travels.each do |travel| %>
+      <li><%= link_to travel.resource, travel %></li>
+    <% end %>
+</ul>
+
+<%= link_to "新規項目作成", new_travel_path(id: @prefecture.id)   %>
+
+

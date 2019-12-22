@@ -1,7 +1,11 @@
 <h1>宮城、山形、福島の観光</h1>
-<a>宮城県</a>
-<a>山形県</a>
-<a>福島県</a>
 
-<h4>↑↑観光地のレビューを見たい県をクリック</h4>
+<ul>
+<% @prefectures.each do |prefecture| %>
+    <li><%= link_to prefecture.name, prefecture_path(@prefecture, id: prefecture.id)  %></li>
+<% end %>
+</ul>
+
+
+<p>↑↑観光地のレビューを見たい県をクリック</p>
 

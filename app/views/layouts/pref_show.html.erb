@@ -1,7 +1,0 @@
-<!-- PrefectureController#show -->
-<!-- @prefectureで、都道府県モデルインスタンス取得 -->
-<h1><%= @prefecture.name %></h1>
-
-<% @prefecture.travels.each do |travel| %>
-    <%= link_to travel.content, travel %>
-<% end %>

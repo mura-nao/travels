@@ -1,0 +1,14 @@
+<h1><%= @travel.resource %>のコメントページ</h1>
+<div class="row">
+  <aside class="col-sm-4">
+    <%= form_with(model: @comment, local: true) do |f| %>
+      <%= f.hidden_field :travel_id, value: @travel.id %>
+      <%= render 'layouts/error_messages', model: f.object %>
+    
+      <div class="form-group">
+        <%= f.text_area :content, class: 'form-control', rows: 5 %>
+      </div>
+        <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
+    <% end %>
+  </aside>
+</div>

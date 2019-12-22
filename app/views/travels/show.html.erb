@@ -1,0 +1,23 @@
+
+<!-- @travelで、トラベルモデルインスタンス取得 -->
+
+<h2><%= @travel.prefecture.name %></h2>
+<h1><%= @travel.resource %>の口コミ</h1>
+
+<ul>
+  <% @travel.comments.each do |comment| %>
+    <li><%= comment.content %></li>
+    <div>
+      <% if current_user == comment.user %>
+        <%= link_to "Delete", comment, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+      <% end %>
+    </div>
+  <% end %>
+</ul>
+
+<%= link_to 'コメントの投稿', new_comment_path(id: @travel.id) %><br>
+<%= link_to '観光名物一覧ページへ', "/prefectures/#{@travel.prefecture_id}" %>
+
+<!-- CommentController#newに行く  params[:id]で、newアクション側で@travel.id取得 -->
+<!-- @comment = Comment.new(travel_id: params[:id]) -->
+

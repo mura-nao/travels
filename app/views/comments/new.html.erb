@@ -1,8 +1,8 @@
-<h1><%= @travel.resource %>のコメントページ</h1>
+<h1><%= @comment.travel.resource %>のコメントページ</h1>
 <div class="row">
   <aside class="col-sm-4">
     <%= form_with(model: @comment, local: true) do |f| %>
-      <%= f.hidden_field :travel_id, value: @travel.id %>
+      <%= f.hidden_field :travel_id, value: @comment.travel.id %>
       <%= render 'layouts/error_messages', model: f.object %>
     
       <div class="form-group">

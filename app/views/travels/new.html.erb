@@ -1,9 +1,9 @@
-<h1><%= @prefecture.name %></h1>
+<h1><%= @travel.prefecture.name %></h1>
 <h2>観光名物の新規作成ページ</h2>
 <div class="row">
   <aside class="col-sm-4">
     <%= form_with(model: @travel, local: true) do |f| %>
-      <%= f.hidden_field :prefecture_id, value: @prefecture.id %>
+      <%= f.hidden_field :prefecture_id, value: @travel.prefecture.id %>
       <%= render 'layouts/error_messages', model: f.object %>
     
       <div class="form-group">
